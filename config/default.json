@@ -1,0 +1,22 @@
+{
+    "server" : {
+        "port" : 3001,
+        "logLevel": "info"
+    },
+    "awsS3":{
+            "BucketName":"$BucketName",
+            "accessKey":"$accessKey",
+            "secretKey":"$secretKey",
+            "apiVersion" : "2006-03-01"
+        },
+    "maxPaginationSize":"20",
+    "environment":"$ENVIRONMENT",
+    "mongodb" : {
+        "baseURL" : "$baseURL",
+        "dbName" : "PRODUCT",
+        "debug" : "false",
+        "username" : "$MONGODB_USER",
+        "password" : "$MONGODB_PASSWORD",
+        "poolSize" : 10
+    }
+}
