@@ -162,12 +162,12 @@ exports.validateGetInventoryInfoRequest = function (req, res, done) {
 }
 exports.validateReducingResInventoryRequest = function (req, res, done) {
 
-    if (!req.query.variantId) 
+    if (!req.body.variantId) 
     {
         res.code(400)
         done(new HttpError('faliure', 20001, 'variantId is missing'))
     }
-    if (!req.query.quantity) 
+    if (!req.body.quantity) 
     {
         res.code(400)
         done(new HttpError('faliure', 20001, 'quantity is missing'))

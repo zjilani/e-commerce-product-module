@@ -239,7 +239,7 @@ exports.getInventoryInfo = async (req, res) => {
             throw new HttpError('failiure', 2002, "Check variantId")
         }
 
-        return res.status(201).send({
+        return res.status(200).send({
             status: 'success',
             data: response
         })
@@ -250,7 +250,7 @@ exports.getInventoryInfo = async (req, res) => {
 }
 exports.reducingResInventory = async (req, res) => {
     try {
-        let response = await inventoryServices.reducingResInventory(req.fastify, req.query)
+        let response = await inventoryServices.reducingResInventory(req.fastify, req.body)
         if(response.response === "variantId doesnot exist"){
             res.code(400)
             throw new HttpError('failiure', 2002, "Check variantId")
@@ -258,11 +258,11 @@ exports.reducingResInventory = async (req, res) => {
 
         return res.status(201).send({
             status: 'success',
-            data: response
+            message: 'Reserved Inventory Updated !!!'
         })
     } catch (e) {
         res.code(500)
-        throw new HttpError('failiure', 2002, "Create Category Failed", e.message)
+        throw new HttpError('failiure', 2002, "Reducing Reserved Inventory Failed", e.message)
     }
 }
 exports.reducingInventory = async (req, res) => {
@@ -279,11 +279,11 @@ exports.reducingInventory = async (req, res) => {
         
         return res.status(201).send({
             status: 'success',
-            data: response
+            message: 'Inventory Updated !!!'
         })
     } catch (e) {
         res.code(500)
-        throw new HttpError('failiure', 2002, "Create Category Failed", e.message)
+        throw new HttpError('failiure', 2002, "Inventory Update Failed", e.message)
     }
 }
 

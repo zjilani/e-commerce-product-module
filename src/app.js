@@ -17,6 +17,7 @@ var options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
+  useFindAndModify: false
  
 }
 mongoose.connect(mongodbConfig.baseURL + mongodbConfig.dbName, options)

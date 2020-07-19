@@ -1465,14 +1465,21 @@ exports.getSubCategory = {
                     description: 'Updating Inventory of Products ',
                     tags: ["Inventory"],
                     summary: 'Reducing Reserved Inventory',
-                    query: {
+                    body: {
                         "type": "object",
                         "properties": {
                             "variantId":{
-                                "type":"string",
+                                "type": "array",
+                                "items":{
+                                    "type": "string"
+                                }
+
                             },
                             "quantity" :{
-                                "type":"number"
+                                "type": "array",
+                                "items":{
+                                    "type": "number"
+                                }
                             }
                         },
                         "required": [
@@ -1492,29 +1499,11 @@ exports.getSubCategory = {
                                 "message": {
                                     "type": "string"
                                 },
-                                "data":{
-                                    "type":"object",
-                                    "properties": {
-                                        "variantId":{
-                                            "type": "string"
-                                        },
-                                        "inventory":{
-                                            "type": "number",
-                                        },
-                                        "reservedInventory":{
-                                            "type":"number",
-                                        }
-                                    },
-                                    "required": [
-                                        "inventory",
-                                        "reservedInventory"
-                                    ]
                                 
-                                },
                             },
                                     "required": [
                                             "status",
-                                            "data"
+                                            "message"
                                             ]
                         }, 400: {
                             "description": 'Error response',
@@ -1573,10 +1562,17 @@ exports.getSubCategory = {
                             "type": "object",
                             "properties": {
                                 "variantId":{
-                                    "type":"string",
+                                    "type": "array",
+                                    "items":{
+                                        "type": "string"
+                                    }
+    
                                 },
                                 "quantity" :{
-                                    "type":"number"
+                                    "type": "array",
+                                    "items":{
+                                        "type": "number"
+                                    }
                                 },
                                 "message" : {
                                     "type" : "string"
@@ -1600,29 +1596,29 @@ exports.getSubCategory = {
                                     "message": {
                                         "type": "string"
                                     },
-                                    "data":{
-                                        "type":"object",
-                                        "properties": {
-                                            "variantId":{
-                                                "type": "string"
-                                            },
-                                            "inventory":{
-                                                "type": "number",
-                                            },
-                                            "reservedInventory":{
-                                                "type":"number",
-                                            }
-                                        },
-                                        "required": [
-                                            "inventory",
-                                            "reservedInventory"
-                                        ]
+                                    // "data":{
+                                    //     "type":"object",
+                                    //     "properties": {
+                                    //         "variantId":{
+                                    //             "type": "string"
+                                    //         },
+                                    //         "inventory":{
+                                    //             "type": "number",
+                                    //         },
+                                    //         "reservedInventory":{
+                                    //             "type":"number",
+                                    //         }
+                                    //     },
+                                    //     "required": [
+                                    //         "inventory",
+                                    //         "reservedInventory"
+                                    //     ]
                                     
-                                    },
+                                    // },
                                 },
                                         "required": [
                                                 "status",
-                                                "data"
+                                                // "data"
                                                 ]
                             }, 400: {
                                 "description": 'Error response',
