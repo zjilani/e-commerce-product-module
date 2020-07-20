@@ -89,8 +89,9 @@ fastify.setErrorHandler(function (error, request, reply) {
 })
 
 // Run the server!
-appconfig = config.server
-fastify.listen(appconfig.port || 3001, function (err, address) {
+appconfig = config.server 
+PORT = appconfig.port || 3001
+fastify.listen(PORT, function (err, address) {
   if (err) {  
     fastify.log.error(err)
     process.exit(1)
