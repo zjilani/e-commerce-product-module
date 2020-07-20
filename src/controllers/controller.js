@@ -233,7 +233,7 @@ exports.createCategory = async (req, res) => {
 
 exports.getInventoryInfo = async (req, res) => {
     try {
-        let response = await inventoryServices.getInventoryInfo(req.fastify, req.query)
+        let response = await inventoryServices.getInventoryInfo(req.fastify, req.body)
         if(response.response === "variantId doesnot exist"){
             res.code(400)
             throw new HttpError('failiure', 2002, "Check variantId")
@@ -245,7 +245,7 @@ exports.getInventoryInfo = async (req, res) => {
         })
     } catch (e) {
         res.code(500)
-        throw new HttpError('failiure', 2002, "Create Category Failed", e.message)
+        throw new HttpError('failiure', 2002, "Get Inventory Info Failed", e.message)
     }
 }
 exports.reducingResInventory = async (req, res) => {

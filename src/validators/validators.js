@@ -151,7 +151,7 @@ exports.validateProductPriorityRequest = function (req, res, done) {
 }
 exports.validateGetInventoryInfoRequest = function (req, res, done) {
 
-    if (!req.query.variantId) 
+    if (!req.body.variantId) 
     {
         res.code(400)
         done(new HttpError('faliure', 20001, 'variantId is missing'))

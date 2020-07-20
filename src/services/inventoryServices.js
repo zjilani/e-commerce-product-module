@@ -2,18 +2,15 @@ const Inventory = require("../models/Inventory")
 
 const getInventoryInfo = async (fastify,getInventoryInfoRequest)=>{
   
-    // const test = await Inventory.find({ variantId : {$in: ['Variant_','Variant_2','Variant_3']}})
-    // console.log(test)
 
-    const inventoryInfo = await Inventory.findOne({variantId:getInventoryInfoRequest.variantId})
-    if(!inventoryInfo){
+    const inventoryInfo = await Inventory.find({variantId: {$in : getInventoryInfoRequest.variantId}})
+    if(inventoryInfo.length != getInventoryInfoRequest.variantId.length){
         return {
             response: "variantId doesnot exist"
         }
     }
-    const inventory = inventoryInfo.inventory
-    const reservedInventory = inventoryInfo.reservedInventory
-    return {inventory,reservedInventory}
+   
+    return inventoryInfo
 }
 
 const reducingResInventory = async (fastify,reducingResInventoryRequest) =>{

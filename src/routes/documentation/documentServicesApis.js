@@ -1368,11 +1368,14 @@ exports.getSubCategory = {
                 description: 'Get Inventory Info of Products ',
                 tags: ["Inventory"],
                 summary: 'Get Inventory Info',
-                query: {
+                body: {
                     "type": "object",
                     "properties": {
                         "variantId":{
-                            "type":"string",
+                            "type":"array",
+                            "items":{
+                                "type":"string"
+                            }
                         }
                     },
                     "required": [
@@ -1392,8 +1395,11 @@ exports.getSubCategory = {
                                 "type": "string"
                             },
                             "data":{
-                                "type":"object",
+                                "type":"array",
                                 "properties": {
+                                    "variantId":{
+                                        "type":"string"
+                                    },
                                     "inventory":{
                                         "type": "number",
                                     },
@@ -1402,6 +1408,7 @@ exports.getSubCategory = {
                                     }
                                 },
                                 "required": [
+                                    "variantId",
                                     "inventory",
                                     "reservedInventory"
                                 ]

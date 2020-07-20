@@ -81,7 +81,7 @@ const routes = [
         preValidation: validators.validateGetVariantsRequest      
     },
     {
-        method: "GET",
+        method: "POST",
         url: "/getInventoryInfo",
         handler: controllers.getInventoryInfo, 
         schema:documentation.getInventoryInfo,
