@@ -5,7 +5,7 @@ const configSchema = {
             "type": "object",
             "properties": {
                 "port": {
-                    "type": "integer"
+                    "type": "string"
                 },
                 "logLevel": {
                     "type": "string"

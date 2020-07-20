@@ -1,6 +1,6 @@
 {
     "server" : {
-        "port" : 3001,
+        "port" : "$port",
         "logLevel": "info"
     },
     "awsS3":{
