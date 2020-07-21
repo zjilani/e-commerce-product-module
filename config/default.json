@@ -4,15 +4,15 @@
         "logLevel": "info"
     },
     "awsS3":{
-            "BucketName":"$BucketName",
-            "accessKey":"$accessKey",
-            "secretKey":"$secretKey",
+            "BucketName":"$BUCKET_NAME",
+            "accessKey":"$ACCESS_KEY",
+            "secretKey":"$SECRET_KEY",
             "apiVersion" : "2006-03-01"
         },
     "maxPaginationSize":"20",
     "environment":"$ENVIRONMENT",
     "mongodb" : {
-        "baseURL" : "$baseURL",
+        "baseURL" : "$BASE_URL",
         "dbName" : "PRODUCT",
         "debug" : "false",
         "username" : "$MONGODB_USER",

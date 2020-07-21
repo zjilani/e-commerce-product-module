@@ -90,7 +90,7 @@ fastify.setErrorHandler(function (error, request, reply) {
 
 // Run the server!
 appconfig = config.server 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3001
 const host = '0.0.0.0';
 
 fastify.listen(PORT,host,function (err, address) {
