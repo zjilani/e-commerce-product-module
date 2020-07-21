@@ -98,6 +98,6 @@ fastify.listen(PORT,'0.0.0.0',function (err, address) {
     process.exit(1)
   } else {
     // fastify.swagger()
-    fastify.log.info(`server listening on ${fastify.server.address().port}`)
+    fastify.log.info(`server listening on ${PORT}`)
   }
 });
